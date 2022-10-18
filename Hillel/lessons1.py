@@ -7,5 +7,5 @@ else:
     p = a + b + c
     if p > 20:
         print("найбільша сторона:", max(a, b, c))
-    if p < 10:
+    elif p < 10:
         print("найменша сторона:", min(a, b, c))
