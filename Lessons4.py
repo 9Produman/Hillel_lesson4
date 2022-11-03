@@ -23,6 +23,9 @@ res = []
 elements = []
 for element in tuple_d:
     count = tuple_d.count(element)
+    if count < 2 and element in elements:
+        continue
+    elements.append(element)
     indexes = []
     for index, item in enumerate(tuple_d):
         if item == element:
@@ -43,6 +46,7 @@ list_c = list_a + list_b
 
 # Задача 2
 list_c = [x for y in zip(list_a, list_b) for x in y]
+print(list_c)
 
 
 # Задача 3
@@ -50,10 +54,33 @@ list_с_a = [x for x in list_a if not x % 2]
 list_с_b = [x for x in list_b if x % 2]
 
 
-
 # Задача 4
-# list_d = map(sum, zip(list_a,list_b))
-# print(list_d)
-
-list_d = list_c.reverse()
+list_d = list_c[::-1]
 print(list_d)
+
+
+# Задача 5
+res = [x+y for x, y in zip(list_c, list_d)]
+print(res)
+
+
+# Задача 6
+res1 = sorted(list_f)
+res2 = sorted(list_f,key=None,reverse=True)
+print(res1)
+print(res2)
+
+
+# Задача 7
+temp_res = []
+for index, item in enumerate(list_c):
+    count = list_c.count(item)
+    if count > 1 and list_c.index(item) == index:
+        test2 = ()
+        for index1, item1 in enumerate(list_d, 0):
+            if item1 == item:
+                test2 = test2 + (index, )
+        temp_res = temp_res + (item, test2)
+print('Tuple_Task #3_1\n', 'res=', temp_res)
+
+
