@@ -50,9 +50,10 @@ print(list_c)
 
 
 # Задача 3
-list_с_a = [x for x in list_a if not x % 2]
-list_с_b = [x for x in list_b if x % 2]
-
+list_c_a = [x for x in list_a if not x % 2]
+list_c_b = [x for x in list_b if x % 2]
+print(list_c_a)
+print(list_c_b)
 
 # Задача 4
 list_d = list_c[::-1]
@@ -72,15 +73,9 @@ print(res2)
 
 
 # Задача 7
-temp_res = []
-for index, item in enumerate(list_c):
-    count = list_c.count(item)
-    if count > 1 and list_c.index(item) == index:
-        test2 = ()
-        for index1, item1 in enumerate(list_d, 0):
-            if item1 == item:
-                test2 = test2 + (index, )
-        temp_res = temp_res + (item, test2)
-print('Tuple_Task #3_1\n', 'res=', temp_res)
+res = map(list, zip(list_c, list_d))
+res = tuple(res)
+print(res)
+
 
 
